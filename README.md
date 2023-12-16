@@ -26,7 +26,19 @@ This is an Alumni App developed using Flutter and Node.js, aimed at connecting a
 
 Follow these steps to get the app up and running on your local machine:
 
-1. Clone the repository:
+# Navigate to the project directory
+cd alumni-app
 
-   ```bash
-   git clone https://github.com/your-username/alumni-app.git
+# Install dependencies
+flutter pub get
+
+# Set up your Node.js server
+# 1. Clone the server repository (if separate) or create your own Node.js server.
+# 2. Configure the server to handle authentication, user profiles, and other required functionalities.
+
+# Update the app to communicate with your Node.js server
+# - Modify API endpoints in the app to match your server routes.
+# - Update authentication and data fetching logic accordingly.
+
+# Run the app
+flutter run
