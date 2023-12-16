@@ -14,25 +14,23 @@ This is an Alumni App developed using Flutter and Node.js, aimed at connecting a
 
 3. **Profile Management**: Alumni can create and manage their profiles, providing information such as graduation year, current profession, and contact details.
 
-   ![image6](https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771)
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771" alt="image6" width="50%">
 
 5. **News Feed**: Stay updated with the latest news, events, and achievements of fellow alumni and the alma mater.
 
-   ![am7](https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6)
-   
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6" alt="am7" width="50%">
 
 9. **Directory**: Easily search and connect with other alumni based on various criteria such as graduation year, location, and profession.
  
-   ![y](https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063)
-    
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063" alt="y" width="50%">
 
 11. **Messaging**: Private messaging allows alumni to communicate directly within the app, fostering networking and collaboration.
 
-    ![image5](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="image5" width="50%">
 
 11. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
 
-    ![image5](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="image5" width="50%">
 
 ## Getting Started
 
@@ -68,4 +66,3 @@ class ApiConfig {
   static const String baseUrl = 'YOUR_SERVER_BASE_URL';
   // Add other API-related configurations as needed
 }
-
