@@ -33,12 +33,27 @@ cd alumni-app
 flutter pub get
 
 # Set up your Node.js server
-# 1. Clone the server repository (if separate) or create your own Node.js server.
-# 2. Configure the server to handle authentication, user profiles, and other required functionalities.
+1. Clone the server repository (if separate) or create your own Node.js server.
+2. Configure the server to handle authentication, user profiles, and other required functionalities.
 
 # Update the app to communicate with your Node.js server
-# - Modify API endpoints in the app to match your server routes.
-# - Update authentication and data fetching logic accordingly.
+- Modify API endpoints in the app to match your server routes.
+- Update authentication and data fetching logic accordingly.
 
 # Run the app
 flutter run
+
+# Configuration
+
+## Update App and Server Details
+
+Update the following configuration files with your server and app details:
+
+- `lib/config/api_config.dart`
+
+```dart
+class ApiConfig {
+  static const String baseUrl = 'YOUR_SERVER_BASE_URL';
+  // Add other API-related configurations as needed
+}
+
