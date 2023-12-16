@@ -18,20 +18,20 @@ This is an Alumni App developed using Flutter and Node.js, aimed at connecting a
 5. **News Feed**: Stay updated with the latest news, events, and achievements of fellow alumni and the alma mater.
 
    ![am7](https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6)
-
-7. **Events**: View and RSVP for alumni events, reunions, and networking opportunities.
-
    
 
 9. **Directory**: Easily search and connect with other alumni based on various criteria such as graduation year, location, and profession.
-
-10. **Messaging**: Private messaging allows alumni to communicate directly within the app, fostering networking and collaboration.
-
+ 
+   ![y](https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063)
     
 
-12. **Job Board**: Post and search for job opportunities within the alumni community.
+11. **Messaging**: Private messaging allows alumni to communicate directly within the app, fostering networking and collaboration.
 
-13. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
+    ![image5](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
+
+11. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
+
+    ![image5](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
 
 ## Getting Started
 
