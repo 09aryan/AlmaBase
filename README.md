@@ -8,7 +8,8 @@ This is an Alumni App developed using Flutter and Node.js, aimed at connecting a
 
 1. **User Authentication**: Secure user authentication ensures that only authorized alumni can access the app.
 
-   ![io](https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2)
+<img src="https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2" alt="io" width="50%">
+
 
 
 3. **Profile Management**: Alumni can create and manage their profiles, providing information such as graduation year, current profession, and contact details.
