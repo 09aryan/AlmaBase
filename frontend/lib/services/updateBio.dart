@@ -23,14 +23,15 @@ class UpdateBio {
       final Map<String, dynamic> requestBody = {'bio': bio};
       final response = await http.put(
         Uri.parse(
-            'http://10.0.9.246:1000/app/v1/set-Bio/${userProvider.user!.id}'),
+            'https://almabase.onrender.com/app/v1/set-Bio/${userProvider.user!.id}'),
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': userProvider.user!.token.toString()
         },
         body: jsonEncode(requestBody),
       );
-      print('http://10.0.9.246:1000/app/v1/set-Bio/${userProvider.user!.id}');
+      print(
+          'https://almabase.onrender.com/app/v1/set-Bio/${userProvider.user!.id}');
       print('Response: ${response.body}');
       print('Status code: ${response.statusCode}');
       print(userId);

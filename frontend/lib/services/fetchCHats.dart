@@ -15,7 +15,7 @@ class ApiService {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/chat/$userId'),
+        Uri.parse('https://almabase.onrender.com/app/v1/chat/$userId'),
         headers: {
           'Authorization': authToken,
         },

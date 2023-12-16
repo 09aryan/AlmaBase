@@ -38,7 +38,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.post(
-        Uri.parse('http://10.0.9.246:1000/app/v1/like/$postId'),
+        Uri.parse('https://almabase.onrender.com/app/v1/like/$postId'),
         headers: {'Authorization': authToken},
         body: {'userId': userId, 'postId': postId},
       );
@@ -59,12 +59,12 @@ class _PostItemWidgetState extends State<PostItemWidget> {
   Future<void> onGetComments(BuildContext context, dynamic post) async {
     try {
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/post/${post['_id']}/comments'),
+        Uri.parse(
+            'https://almabase.onrender.com/app/v1/post/${post['_id']}/comments'),
       );
 
       if (response.statusCode == 200) {
         final comments = jsonDecode(response.body)['comments'];
-        // ignore: use_build_context_synchronously
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -104,7 +104,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
   Future<void> getLikedUsers(String postId) async {
     try {
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/posts/$postId/likes'),
+        Uri.parse('https://almabase.onrender.com/app/v1/posts/$postId/likes'),
       );
 
       if (response.statusCode == 200) {
@@ -128,7 +128,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
 
       if (userId != null && text.isNotEmpty) {
         final response = await http.post(
-          Uri.parse('http://10.0.9.246:1000/app/v1/add-comment/$postId'),
+          Uri.parse('https://almabase.onrender.com/app/v1/add-comment/$postId'),
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({'userId': userId.toString(), 'text': text}),
         );
@@ -162,15 +162,17 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => UserInformationPage(
-                          userId: widget.post['user']['_id'],
+                          userId: widget.post['user']?['_id'] ?? '',
                         ),
                       ),
                     );
                   },
                   child: CircleAvatar(
                     radius: 18,
-                    backgroundImage:
-                        NetworkImage(widget.post['user']['profilepic']),
+                    backgroundImage: NetworkImage(
+                      widget.post['user']?['profilepic'] ??
+                          'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGljfGVufDB8fDB8fHww',
+                    ),
                   ),
                 ),
                 const SizedBox(width: 8.0),
@@ -178,7 +180,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.post['user']['userName'] ?? 'No username',
+                      widget.post['user']?['userName'] ?? 'No username',
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -207,13 +209,13 @@ class _PostItemWidgetState extends State<PostItemWidget> {
           Container(
             height: 150,
             child: CarouselSlider(
-              items: widget.post['media'].map<Widget>((url) {
+              items: (widget.post['media'] ?? []).map<Widget>((url) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      url,
+                      url ?? '',
                       width: double.infinity,
                       height: 150,
                       fit: BoxFit.cover,
@@ -247,8 +249,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                     const SizedBox(width: 4.0),
                     GestureDetector(
                       onTap: () async {
-                        await getLikedUsers(widget.post['_id']);
-                        // ignore: use_build_context_synchronously
+                        await getLikedUsers(widget.post['_id'] ?? '');
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -264,14 +265,16 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                                                 MaterialPageRoute(
                                                   builder: (context) =>
                                                       UserInformationPage(
-                                                    userId: user['userId'],
+                                                    userId:
+                                                        user['userId'] ?? '',
                                                   ),
                                                 ),
                                               );
                                             },
                                             child: CircleAvatar(
                                               backgroundImage: NetworkImage(
-                                                  user['profilepic'] ?? ''),
+                                                user['profilepic'] ?? '',
+                                              ),
                                             ),
                                           ),
                                           title: GestureDetector(
@@ -281,12 +284,13 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                                                 MaterialPageRoute(
                                                   builder: (context) =>
                                                       UserInformationPage(
-                                                    userId: user['userId'],
+                                                    userId:
+                                                        user['userId'] ?? '',
                                                   ),
                                                 ),
                                               );
                                             },
-                                            child: Text(user['userName']),
+                                            child: Text(user['userName'] ?? ''),
                                           ),
                                         ))
                                     .toList(),
@@ -343,7 +347,7 @@ class _PostItemWidgetState extends State<PostItemWidget> {
                     ),
                   ),
                   const SizedBox(width: 4.0),
-                  for (var userId in widget.post['taggedUsers'])
+                  for (var userId in widget.post['taggedUsers'] ?? [])
                     FutureBuilder(
                       future: UserDetails.fetchDetails(
                         context: context,

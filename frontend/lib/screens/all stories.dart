@@ -21,8 +21,8 @@ class _AllStoriesWidgetState extends State<AllStoriesWidget> {
 
   Future<void> fetchStories() async {
     try {
-      final response =
-          await http.get(Uri.parse('http://10.0.9.246:1000/app/v1/stories'));
+      final response = await http
+          .get(Uri.parse('https://almabase.onrender.com/app/v1/stories'));
       if (response.statusCode == 200) {
         List<dynamic> fetchedStories = jsonDecode(response.body)['stories'];
 
@@ -47,6 +47,7 @@ class _AllStoriesWidgetState extends State<AllStoriesWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange[200],
       body: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: stories.length,
@@ -258,6 +259,14 @@ class StoryItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Check if 'story' is null or if 'user' is null
+    if (story == null || story['user'] == null) {
+      // Handle the case where the story or user is null
+      return Container(
+          color:
+              Colors.orange[200]); // Return an empty container or a placeholder
+    }
+
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -276,13 +285,15 @@ class StoryItemWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8.0),
           child: Column(
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(story['user']['profilepic']),
-
-                radius:
-                    25.0, // Increase the radius to increase the size of the user image
-              ),
-              Text(story['user']['userName']),
+              // Check if 'profilepic' is null before accessing it
+              if (story['user']['profilepic'] != null)
+                CircleAvatar(
+                  backgroundImage: NetworkImage(story['user']['profilepic']),
+                  radius: 25.0,
+                ),
+              // Check if 'userName' is null before accessing it
+              if (story['user']['userName'] != null)
+                Text(story['user']['userName']),
             ],
           ),
         ),

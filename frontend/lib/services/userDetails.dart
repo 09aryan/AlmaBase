@@ -13,8 +13,8 @@ class UserDetails {
   }) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     try {
-      final response = await http.get(
-          Uri.parse('http://10.0.9.246:1000/app/v1/user-details/${userId}'));
+      final response = await http.get(Uri.parse(
+          'https://almabase.onrender.com/app/v1/user-details/${userId}'));
       if (response.statusCode == 200) {
         print('  a                ');
         // print(jsonDecode(response.body));

@@ -16,8 +16,8 @@ class _SearchPageState extends State<SearchPage> {
   List<Map<String, dynamic>> _searchResults = [];
 
   void _searchUsers(String userName) async {
-    final response = await http
-        .get(Uri.parse('http://10.0.9.246:1000/app/v1/search/$userName'));
+    final response = await http.get(
+        Uri.parse('https://almabase.onrender.com/app/v1/search/$userName'));
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -36,7 +36,7 @@ class _SearchPageState extends State<SearchPage> {
       print('Auth Token: $authToken');
 
       final response = await http.post(
-        Uri.parse('http://10.0.9.246:1000/app/v1/chat/access'),
+        Uri.parse('https://almabase.onrender.com/app/v1/chat/access'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': authToken,

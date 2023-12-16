@@ -152,7 +152,8 @@ class _ChatPageState extends State<ChatPage> {
   void _fetchChatMessages() async {
     try {
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/message/${widget.chatId}'),
+        Uri.parse(
+            'https://almabase.onrender.com/app/v1/message/${widget.chatId}'),
       );
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
@@ -191,7 +192,7 @@ class _ChatPageState extends State<ChatPage> {
 
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://10.0.9.246:1000/app/v1/message'),
+        Uri.parse('https://almabase.onrender.com/app/v1/message'),
       );
 
       request.headers.addAll({
@@ -260,7 +261,7 @@ class _ChatPageState extends State<ChatPage> {
     _fetchChatMessages();
 
     // Connect to the Socket.io server
-    socket = IO.io('http://10.0.9.246:1000', <String, dynamic>{
+    socket = IO.io('https://almabase.onrender.com', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': true, // Connect automatically
     });

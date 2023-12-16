@@ -21,7 +21,7 @@ class RegistrationService {
         return;
       }
       var request = http.MultipartRequest(
-          'POST', Uri.parse('http://10.0.9.246:1000/app/v1/signup'));
+          'POST', Uri.parse('https://almabase.onrender.com/app/v1/signup'));
       request.fields['fullName'] = fullName;
       request.fields['userName'] = userName;
       request.fields['email'] = email;

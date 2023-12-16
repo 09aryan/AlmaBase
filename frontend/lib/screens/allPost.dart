@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:frontend/constent/postItemWidget.dart';
 import 'package:http/http.dart' as http;
@@ -13,6 +12,7 @@ class AllPostsWidget extends StatefulWidget {
 
 class _AllPostsWidgetState extends State<AllPostsWidget> {
   List<dynamic> posts = [];
+
   @override
   void initState() {
     super.initState();
@@ -21,18 +21,22 @@ class _AllPostsWidgetState extends State<AllPostsWidget> {
 
   Future<void> fetchPosts() async {
     try {
-      final response =
-          await http.get(Uri.parse('http://10.0.9.246:1000/app/v1/all-posts'));
+      final response = await http
+          .get(Uri.parse('https://almabase.onrender.com/app/v1/all-posts'));
       if (response.statusCode == 200) {
         print(response.body);
+        // Sort the posts based on the timestamp (assuming there's a 'timestamp' field in each post)
+        List<dynamic> fetchedPosts = jsonDecode(response.body)['posts'];
+        fetchedPosts.sort((a, b) => b['createdAt'].compareTo(a['createdAt']));
+
         setState(() {
-          posts = jsonDecode(response.body)['posts'];
+          posts = fetchedPosts;
         });
       } else {
         throw Exception('Failed to load posts');
       }
     } catch (err) {
-      print('Error fecthing posts:$err');
+      print('Error fetching posts: $err');
     }
   }
 
@@ -41,8 +45,6 @@ class _AllPostsWidgetState extends State<AllPostsWidget> {
     return Container(
       child: Scaffold(
         backgroundColor: Colors.orange[100],
-        //    backgroundColor: Colors.green.shade100,
-        //  backgroundColor: Color(0xFFFFC6FE),
         body: ListView.builder(
           itemCount: posts.length,
           itemBuilder: (context, index) {

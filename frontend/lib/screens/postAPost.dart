@@ -1,11 +1,9 @@
 import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:frontend/constent/inputText.dart';
 import 'package:frontend/constent/inputTextwithCallBack.dart';
 import 'package:frontend/constent/nav_bar.dart';
 import 'package:frontend/provider/user.dart';
-import 'package:frontend/screens/allContents.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +34,7 @@ class _CreateApostState extends State<CreateApost> {
     var request = http.MultipartRequest(
       'POST',
       Uri.parse(
-        'http://10.0.9.246:1000/app/v1/create-post/${userProvider.user!.id}',
+        'https://almabase.onrender.com/app/v1/create-post/${userProvider.user!.id}',
       ),
     );
     request.fields['caption'] = captionController.text;
@@ -73,7 +71,7 @@ class _CreateApostState extends State<CreateApost> {
 
   Future<void> searchUsers(String query) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    final String apiUrl = 'http://10.0.9.246:1000/app/v1/search/$query';
+    final String apiUrl = 'https://almabase.onrender.com/app/v1/search/$query';
 
     try {
       var response = await http.get(Uri.parse(apiUrl));
@@ -275,7 +273,7 @@ class _CreateApostState extends State<CreateApost> {
                     ElevatedButton(
                       onPressed: createPost,
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
+                        primary: Color.fromARGB(255, 248, 146, 62),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),

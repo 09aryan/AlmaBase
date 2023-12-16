@@ -32,7 +32,8 @@ class _UserInformationPageState extends State<UserInformationPage> {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1//post/$postId/comments'),
+        Uri.parse(
+            'https://almabase.onrender.com/app/v1//post/$postId/comments'),
         headers: {'Authorization': authToken},
       );
 
@@ -87,7 +88,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/all-likes/$postId'),
+        Uri.parse('https://almabase.onrender.com/app/v1/all-likes/$postId'),
         headers: {'Authorization': authToken},
       );
 

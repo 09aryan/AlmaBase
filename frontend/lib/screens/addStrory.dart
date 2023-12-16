@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:frontend/constent/nav_bar.dart';
 import 'package:frontend/model/authToken.dart';
 import 'package:frontend/provider/user.dart';
-import 'package:frontend/screens/allContents.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +25,7 @@ class _PostStoryPageState extends State<PostStoryPage> {
 
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://10.0.9.246:1000/app/v1/post-story'),
+        Uri.parse('https://almabase.onrender.com/app/v1/post-story'),
       );
       request.headers['Authorization'] = authToken!;
       request.fields['text'] = textController.text;
@@ -66,28 +65,28 @@ class _PostStoryPageState extends State<PostStoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post Story'),
+        title: const Text('Add An Alert'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyHomePag()),
+              MaterialPageRoute(builder: (context) => const MyHomePag()),
             );
           },
         ),
       ),
       body: SingleChildScrollView(
-        physics: AlwaysScrollableScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Selected Images:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Container(
               height: 150.0,
               child: imagesFiles.isEmpty
@@ -104,7 +103,7 @@ class _PostStoryPageState extends State<PostStoryPage> {
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.add_a_photo,
                             size: 60,
@@ -132,30 +131,30 @@ class _PostStoryPageState extends State<PostStoryPage> {
                       },
                     ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: textController,
               maxLines: 3,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'ADD DESCRCPTIOS',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: isPostingStory ? null : postStory,
               style: ElevatedButton.styleFrom(
                 primary: Colors.orange[300],
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
               child: isPostingStory
-                  ? CircularProgressIndicator(
+                  ? const CircularProgressIndicator(
                       color: Colors.white,
                     )
-                  : Text(
+                  : const Text(
                       'Post Story',
                       style: TextStyle(fontSize: 18.0, color: Colors.white),
                     ),

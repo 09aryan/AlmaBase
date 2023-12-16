@@ -25,7 +25,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/post/$postId/comments'),
+        Uri.parse('https://almabase.onrender.com/app/v1/post/$postId/comments'),
         headers: {'Authorization': authToken},
       );
 
@@ -80,7 +80,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
       String? authToken =
           Provider.of<AuthProvider>(context, listen: false).authToken ?? '';
       final response = await http.get(
-        Uri.parse('http://10.0.9.246:1000/app/v1/all-likes/$postId'),
+        Uri.parse('https://almabase.onrender.com/app/v1/all-likes/$postId'),
         headers: {'Authorization': authToken},
       );
 
@@ -139,6 +139,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
     return Scaffold(
       backgroundColor: Colors.orange[200],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('User Information'),
       ),
       body: FutureBuilder<Map<String, dynamic>>(
@@ -428,7 +429,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                                         ),
                                         const SizedBox(width: 4.0),
                                         Text(
-                                          'Tags: ${post['Tags']?.join(', ') ?? 'No tags'}',
+                                          'Tags: ${post['tags']?.join(', ') ?? 'No tags'}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.w400),
                                         ),

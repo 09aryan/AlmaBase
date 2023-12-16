@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:frontend/constent/nav_bar.dart';
 import 'package:frontend/model/authToken.dart';
 import 'package:frontend/provider/user.dart';
-import 'package:frontend/screens/postAPost.dart';
-import 'package:frontend/screens/seacrhPage.dart';
-import 'package:frontend/screens/upDateBio.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,7 +16,7 @@ class LoginService {
   }) async {
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.9.246:1000/app/v1/login'),
+        Uri.parse('https://almabase.onrender.com/app/v1/login'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
