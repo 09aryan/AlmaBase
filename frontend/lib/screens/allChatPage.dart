@@ -28,7 +28,7 @@ class _ChatsPageState extends State<ChatsPage> {
   void initializeSocketConnection() {
     socket = IO.io('https://almabase.onrender.com', <String, dynamic>{
       'transports': ['websocket'],
-      'autoConnect': false,
+      'autoConnect': true,
     });
   }
 
