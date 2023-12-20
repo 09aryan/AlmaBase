@@ -8,27 +8,39 @@ This Alumni App, developed using Flutter and Node.js, serves as a platform to co
 
 1. **User Authentication**: Ensure secure access to the app by implementing user authentication, allowing only authorized alumni to log in.
 
-   ![User Authentication](https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2" alt="User Authentication" width="200">
+   </p>
 
-3. **Profile Management**: Alumni can create and manage their profiles, sharing information such as graduation year, current profession, and contact details.
+2. **Profile Management**: Alumni can create and manage their profiles, sharing information such as graduation year, current profession, and contact details.
 
-   ![Profile Management](https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771" alt="Profile Management" width="200">
+   </p>
 
-5. **News Feed**: Stay updated with the latest news, events, and achievements of fellow alumni and the alma mater.
+3. **News Feed**: Stay updated with the latest news, events, and achievements of fellow alumni and the alma mater.
 
-   ![News Feed](https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6" alt="News Feed" width="200">
+   </p>
 
-9. **Directory**: Easily search and connect with other alumni based on various criteria such as graduation year, location, and profession.
+4. **Directory**: Easily search and connect with other alumni based on various criteria such as graduation year, location, and profession.
 
-   ![Directory](https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063" alt="Directory" width="200">
+   </p>
 
-11. **Messaging**: Foster networking and collaboration through private messaging, allowing alumni to communicate directly within the app.
+5. **Messaging**: Foster networking and collaboration through private messaging, allowing alumni to communicate directly within the app.
 
-   ![Messaging](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="Messaging" width="200">
+   </p>
 
-11. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
+6. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
 
-   ![Push Notifications](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
+   <p align="center">
+     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="Push Notifications" width="200">
+   </p>
 
 ## Getting Started
 
