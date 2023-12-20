@@ -2,67 +2,119 @@
 
 ## Overview
 
-This is an Alumni App developed using Flutter and Node.js, aimed at connecting and engaging alumni of a particular institution. The app facilitates communication, event updates, and networking among the alumni community.
+This Alumni App, developed using Flutter and Node.js, serves as a platform to connect and engage alumni from a specific institution. It facilitates communication, provides event updates, and encourages networking among the alumni community.
 
 ## Features
 
-1. **User Authentication**: Secure user authentication ensures that only authorized alumni can access the app.
+1. **User Authentication**: Ensure secure access to the app by implementing user authentication, allowing only authorized alumni to log in.
 
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2" alt="io" width="50%">
+   ![User Authentication](https://github.com/09aryan/AlmaBase/assets/99637603/4df39807-ca7d-45ef-80f4-79f7d8c790f2)
 
+3. **Profile Management**: Alumni can create and manage their profiles, sharing information such as graduation year, current profession, and contact details.
 
-
-3. **Profile Management**: Alumni can create and manage their profiles, providing information such as graduation year, current profession, and contact details.
-
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771" alt="image6" width="50%">
+   ![Profile Management](https://github.com/09aryan/AlmaBase/assets/99637603/33d2f42f-8c65-485b-a6c0-f61926820771)
 
 5. **News Feed**: Stay updated with the latest news, events, and achievements of fellow alumni and the alma mater.
 
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6" alt="am7" width="50%">
+   ![News Feed](https://github.com/09aryan/AlmaBase/assets/99637603/ed72b79c-cab3-4db2-bd6d-f0888df5a4c6)
 
 9. **Directory**: Easily search and connect with other alumni based on various criteria such as graduation year, location, and profession.
- 
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063" alt="y" width="50%">
 
-11. **Messaging**: Private messaging allows alumni to communicate directly within the app, fostering networking and collaboration.
+   ![Directory](https://github.com/09aryan/AlmaBase/assets/99637603/49cbc0bf-ee6f-486b-91ab-8356585d9063)
 
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="image5" width="50%">
+11. **Messaging**: Foster networking and collaboration through private messaging, allowing alumni to communicate directly within the app.
+
+   ![Messaging](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
 
 11. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
 
-<img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="image5" width="50%">
+   ![Push Notifications](https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee)
 
 ## Getting Started
 
-Follow these steps to get the app up and running on your local machine:
+Follow these steps to set up the app on your local machine:
 
+```bash
 # Navigate to the project directory
 cd alumni-app
 
 # Install dependencies
 flutter pub get
 
-# Set up your Node.js server
+### Set up your Node.js server
+
 1. Clone the server repository (if separate) or create your own Node.js server.
 2. Configure the server to handle authentication, user profiles, and other required functionalities.
 
-# Update the app to communicate with your Node.js server
-- Modify API endpoints in the app to match your server routes.
-- Update authentication and data fetching logic accordingly.
+### Update the app to communicate with your Node.js server
 
-# Run the app
-flutter run
+1. Modify API endpoints in the app to match your server routes.
 
-# Configuration
+   - **Update authentication screen (`lib/screens/authentication_screen.dart`):**
 
-## Update App and Server Details
+     ```dart
+     // lib/screens/authentication_screen.dart
 
-Update the following configuration files with your server and app details:
+     // Add your authentication screen implementation here
+     // Update API endpoints for authentication
+     // ...
+     ```
 
-- `lib/config/api_config.dart`
+   - **Update profile screen (`lib/screens/profile_screen.dart`):**
 
-```dart
-class ApiConfig {
-  static const String baseUrl = 'YOUR_SERVER_BASE_URL';
-  // Add other API-related configurations as needed
-}
+     ```dart
+     // lib/screens/profile_screen.dart
+
+     // Add your profile screen implementation here
+     // Update API endpoints for user profile
+     // ...
+     ```
+
+   - **Update news feed screen (`lib/screens/news_feed_screen.dart`):**
+
+     ```dart
+     // lib/screens/news_feed_screen.dart
+
+     // Add your news feed screen implementation here
+     // Update API endpoints for fetching news feed
+     // ...
+     ```
+
+   - **Update directory screen (`lib/screens/directory_screen.dart`):**
+
+     ```dart
+     // lib/screens/directory_screen.dart
+
+     // Add your directory screen implementation here
+     // Update API endpoints for searching alumni
+     // ...
+     ```
+
+   - **Update messaging screen (`lib/screens/messaging_screen.dart`):**
+
+     ```dart
+     // lib/screens/messaging_screen.dart
+
+     // Add your messaging screen implementation here
+     // Update API endpoints for private messaging
+     // ...
+     ```
+
+   - **Update notification screen (`lib/screens/notification_screen.dart`):**
+
+     ```dart
+     // lib/screens/notification_screen.dart
+
+     // Add your notification screen implementation here
+     // Update API endpoints for handling notifications
+     // ...
+     ```
+
+2. Update authentication and data fetching logic accordingly.
+
+   - Review and modify the logic in each screen file to handle authentication and data fetching based on the updated API endpoints.
+
+3. Run the app:
+
+   ```bash
+   flutter run
