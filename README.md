@@ -36,12 +36,6 @@ This Alumni App, developed using Flutter and Node.js, serves as a platform to co
      <img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="Messaging" width="200">
    </p>
 
-6. **Push Notifications**: Receive instant updates on important announcements, events, and messages through push notifications.
-
-   <p align="center">
-     <img src="https://github.com/09aryan/AlmaBase/assets/99637603/5d02219e-c683-40d7-8406-e48d55ebfbee" alt="Push Notifications" width="200">
-   </p>
-
 ## Getting Started
 
 Follow these steps to set up the app on your local machine:
