@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Alumni App, developed using Flutter and Node.js, serves as a platform to connect and engage alumni from a specific institution. It facilitates communication, provides event updates, and encourages networking among the alumni community.
+This Alumni App, developed using Flutter and Node.js, serves as a platform to connect and engage alumni. It facilitates communication, provides event updates, and encourages networking among the alumni community.
 
 ## Features
 
